@@ -10,12 +10,22 @@
   },
   "scripts": {
     "test": "echo \"No test specified...Passing!\" && exit 0",
-    "build": "tsc && tsc --module CommonJS --outDir dist"
+    "build": "tsc && tsc --module CommonJS --outDir dist",
+    "dev": "tsc --watch",
+    "lint": "eslint --ignore-path .eslintignore --ext .js,.ts ./src",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "files": [
     "dist"
-  ]
+  ],
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
+    "eslint": "^8.30.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.8.1"
+  }
 }
