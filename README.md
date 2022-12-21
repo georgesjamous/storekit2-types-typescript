@@ -20,6 +20,6 @@ npm install https://github.com/georgesjamous/storekit2-types-typescript
 
 ## Contribution
 
-I created this package to quickly access the types for StoreKit-V2
+I created this package to quickly access the types for Apple Store StoreKit-V2
 
-Feel free to open a PR and contribute to it.
+It is incomplete and more areas can be covered, feel free to open a PR and contribute to it.
