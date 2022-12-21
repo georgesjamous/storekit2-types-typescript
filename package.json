@@ -1,6 +1,6 @@
 {
-  "name": "@georgesjamous/storekit2-typescript-types-2",
-  "version": "0.0.6",
+  "name": "@georgesjamous/storekit2-types-typescript",
+  "version": "0.0.1-alpha",
   "description": "Apple Store StoreKit 2 Types for typescript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
