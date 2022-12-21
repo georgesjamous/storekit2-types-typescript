@@ -4,6 +4,10 @@
   "description": "Apple Store StoreKit 2 Types for typescript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/georgesjamous/storekit2-types-typescript"
+  },
   "scripts": {
     "test": "echo \"No test specified...Passing!\" && exit 0",
     "build": "tsc && tsc --module CommonJS --outDir dist"

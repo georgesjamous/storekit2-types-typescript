@@ -1,1 +1,1 @@
-export { NotificationType } from "./NotificationType";
+export { StoreKit2NotificationType } from "./StoreKit2NotificationType";
