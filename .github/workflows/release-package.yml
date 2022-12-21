@@ -1,9 +1,6 @@
 name: Node.js Package
 
 on:
-  push:
-    branches:
-      - "main"
   release:
     types: [prereleased]
 
@@ -20,12 +17,9 @@ jobs:
       - run: npm run build
       - run: npm test
 
-  publish:
+  publish_npm:
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
     steps:
       - uses: actions/checkout@v3
       # Setup .npmrc file to publish to npm
@@ -39,3 +33,23 @@ jobs:
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish_github:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v3
+      # Setup .npmrc file to publish to GitHub Packages
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+          registry-url: 'https://npm.pkg.github.com'
+      - run: npm ci
+      - run: npm i --omit=dev
+      - run: npm run build
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
