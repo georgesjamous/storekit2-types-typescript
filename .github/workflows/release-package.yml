@@ -23,7 +23,7 @@ jobs:
         with:
           name: package_artifact
           path: |
-            dir/
+            dist/
             package-lock.json
 
   publish_npmr:
@@ -35,6 +35,8 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: package_artifact
+      - name: Display structure of downloaded files
+        run: ls -R
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v3
         with:
