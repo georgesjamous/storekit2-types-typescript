@@ -1,11 +1,8 @@
 name: Node.js Package
 
 on:
-  push:
-    branches:
-      - "main"
   release:
-    types: [prereleased]
+    types: [created]
 
 jobs:
   build:
@@ -15,6 +12,13 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+      # - name: Set env
+      #   run: echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF:10})
+      # - name: Make sure Tag == Package Version
+      #   run: |
+      #     echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME"
+      #     echo "Tag name from github.ref_name: ${{  github.ref_name }}"
+      #     ${GITHUB_REF:10}
       - run: npm i --omit=dev
       - run: npm ci
       - run: npm run build
