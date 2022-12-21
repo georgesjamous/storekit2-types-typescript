@@ -8,15 +8,12 @@ on:
     types: [prereleased]
 
 permissions:
-      contents: read
-      packages: write
+    contents: read
+    packages: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -30,9 +27,6 @@ jobs:
   publish_npm:
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
     steps:
       - uses: actions/checkout@v3
       # Setup .npmrc file to publish to npm
@@ -50,9 +44,6 @@ jobs:
   publish_github:
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
     steps:
       - uses: actions/checkout@v3
       # Setup .npmrc file to publish to GitHub Packages
