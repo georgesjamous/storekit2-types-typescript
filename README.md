@@ -1,6 +1,6 @@
 # Apple Store Kit 2 Types for Typescript
 
-[![npm version](https://badge.fury.io/js/@georgesjamous%2Fstorekit2-types-typescript.svg)](https://badge.fury.io/js/@georgesjamous%2Fstorekit2-types-typescript)
+[![npm version](https://badge.fury.io/js/@georgesjamous%2Fstorekit2-types-typescript.png)](https://badge.fury.io/js/@georgesjamous%2Fstorekit2-types-typescript)
 
 Package containing apple's StoreKit V2 types for Typescript.
 
